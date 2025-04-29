@@ -33,3 +33,13 @@ class CocaCola extends Bebida{
         return "cocacola";
     }
 }
+
+class Fanta extends Bebida{
+    public Fanta(int numero) {
+        super(numero);
+    }
+
+    public String beber() {
+        return "fanta";
+    }
+}
