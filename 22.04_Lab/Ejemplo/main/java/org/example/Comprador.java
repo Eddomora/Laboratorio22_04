@@ -10,9 +10,9 @@ class Comprador{
 
         if (m==null) return;
 
-        Bebida b = exp.comprarBebida(m,cualBebida);
+        Producto b = exp.comprarBebida(m,cualBebida);
         if (b!=null){
-            sonido = b.beber();
+            sonido = b.accion();
             Moneda monedaVuelto;
             while ((monedaVuelto = exp.getVuelto()) != null) {
                 vuelto += monedaVuelto.getValor();

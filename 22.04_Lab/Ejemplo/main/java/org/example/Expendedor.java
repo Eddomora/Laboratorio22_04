@@ -1,20 +1,20 @@
 package org.example;
 
 class Expendedor {
-    private Deposito<Bebida> coca;
-    private Deposito<Bebida> sprite;
+    private Deposito<Producto> coca;
+    private Deposito<Producto> sprite;
     private Deposito<Moneda> monVu;
     private int precio;
     public static final int  COCA=1;
     public static final int  SPRITE=2;
 
     public Expendedor(int numBebidas, int precioBebidas){
-        coca = new Deposito<Bebida>();
-        sprite = new Deposito<Bebida>();
+        coca = new Deposito<Producto>();
+        sprite = new Deposito<Producto>();
         monVu = new Deposito<Moneda>();
         precio = precioBebidas;
 
-        Bebida stock;
+        Producto stock = null;
         for (int i = 0; i < numBebidas; i++){
             stock = new CocaCola(100+i);
             coca.addCosa(stock);
@@ -25,14 +25,14 @@ class Expendedor {
         }
     }
 
-    public Bebida comprarBebida(Moneda m, int cual) {
+    public Producto comprarBebida(Moneda m, int cual) {
         if (m == null) return null;
         int cambio= m.getValor() - precio;
         if (cambio<0) {
             monVu.addCosa(m);
             return null;
         }
-        Bebida b=null;
+        Producto b=null;
         switch (cual) {
             case COCA:
                 b = coca.getCosa();
