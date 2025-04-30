@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class MainInteractivo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Moneda m = new Moneda1500();
+        Expendedor e = new Expendedor(10,1000);
         imprimirOpciones();
         int eleccion = scanner.nextInt();
         switch (eleccion) {
