@@ -1,10 +1,10 @@
 package org.example;
 
-public class Super8 extends Producto{
+public class Super8 extends Dulces{
     public Super8(int numero) {
         super(numero);
     }
-    public String accion() {
+    public String comer() {
         return "cocacola";
     }
 }
